@@ -1,0 +1,12 @@
+produto.id.unico: ID de produto já existente.
+produto.codigo.unico: Código de produto já existente.
+produto.nome.unico: Nome de produto já existente.
+produto.preco.obrigatorio: Preço é monetário e deve ser maior que zero.
+pessoa.id.unico: ID de pessoa já existente.
+pessoa.nome.unico: Nome de pessoa já existente.
+pessoa.nome.maximo: Nome não deve ultrapassar 100 caracteres.
+pessoa.nome.minimo: Nome não deve ser menor que 2 caracteres.
+produto.codigo.maximo: Código não deve ultrapassar 100 caracteres.
+produto.codigo.minimo: Código não deve ser menor que 2 caracteres.
+produto.nome.maximo: Nome não deve ultrapassar 100 caracteres.
+produto.nome.minimo: Nome não deve ser menor que 2 caracteres.

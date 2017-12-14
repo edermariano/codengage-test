@@ -1,0 +1,26 @@
+{% include 'pessoa/search.html.twig' %}
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Data de Nascimento</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for pessoa in pessoas %}
+            <tr>
+                <td>{{ pessoa.id }}</td>
+                <td>{{ pessoa.nome }}</td>
+                <td>{{ pessoa.dataNascimento | date('d/m/Y') }}</td>
+                <td>
+                    <a href="{{ path('pessoa_edit', {'id': pessoa.id }) }}" class="btn btn-warning">Atualizar</a>
+                    <a href="{{ path('pessoa_delete', {'id': pessoa.id }) }}" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

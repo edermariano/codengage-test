@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2 class="sub-header">Produtos</h2>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            {% include 'produto/form.html.twig' %}
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="well">
+                <h3>Manter Produto: </h3>
+                <p>CRUD simples da entidade Produto (id: UUID, código: String,
+                    nome: String, preçoUnitário: Double).</p>
+                <ol>
+                    <li>Todos os atributos são obrigatórios.</li>
+                    <li>ID, Código e nome não podem se repetir.</li>
+                    <li>Preço é monetário e deve ser maior que zero.</li>
+                    <li>Deve ser possível pesquisar os produtos por qualquer atributo, exceto
+                        pelo id.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <hr>
+    {% include 'produto/list.html.twig' %}
+{% endblock %}

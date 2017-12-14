@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2 class="sub-header">Pessoas</h2>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            {% include 'pessoa/form.html.twig' %}
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="well">
+                <h3>Manter Pessoa: </h3>
+                <p>CRUD simples da entidade Pessoa (id: UUID, nome: String,
+                    dataNascimento: Date).</p>
+                <ol>
+                    <li>Todos os atributos são obrigatórios.</li>
+                    <li>ID e Nome não podem se repetir.</li>
+                    <li>Deve ser possível pesquisar as pessoas por qualquer atributo, exceto
+                        pelo id.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <hr>
+    {% include 'pessoa/list.html.twig' %}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="page-header">Overview</h1>
+    <p>O objetivo deste teste é demonstrar um pouco da capacidade com o Framework Symfony e com testes.</p>
+    <p>Como é apenas um teste, não reflete a arquitetura que eu normalmente empregaria em um ambiente de verdade.</p>
+    <p>Normalmente costumo separar backend de frontend em projetos separados. A arquitetura que mais tenho utilizado é
+        Symfony como RestAPI e frontend eu defino com a equipe de frontend, gosto de Angular ou React.</p>
+    <p>Componentes utilizados para o teste:</p>
+    <ul>
+        <li>php 7</li>
+        <li>Symfony 3.4.1 por ser a LTS utilizando symfony-flex</li>
+        <li>ramsey/uuid-doctrine - Gerador de UUID para doctrine</li>
+        <li>sensiolabs/security-checker - Para checagem de pacotes</li>
+        <li>symfony/asset - Para manipulação de assets</li>
+        <li>symfony/form - Para formulários* (apenas pra demonstrar o uso, geralmente não gosto de usar)</li>
+        <li>symfony/maker - Gerador de códigos</li>
+        <li>symfony/twig-bundle - Estrutura de templates</li>
+        <li>symfony/webpack-encore-pack - Estrutura para uso de webpack</li>
+        <li>symfony/orm-pack - Estrutura para uso de Mapeamento Objeto Relacional</li>
+        <li>symfony/orm-pack - Estrutura para uso de Mapeamento Objeto Relacional</li>
+        <li>[DEV] doctrine/doctrine-fixtures-bundle - Para geração de fixtures de teste</li>
+    </ul>
+    <h1>Instruções para rodar o projeto:</h1>
+    <ul>
+        <li>Criar arquivo .env com dados para banco de dados.</li>
+        <li>Rodar o comando: php bin/console doctrine:database:create</li>
+        <li>Rodar o comando: php bin/console doctrine:migrations:migrate</li>
+        <li>Rodar os testes: php bin/phpunit</li>
+    </ul>
+    <h1>Instruções do teste:</h1>
+    <embed src="{{ asset('pdf/teste.pdf') }}" width="100%" height="800" type='application/pdf'>
+{% endblock %}

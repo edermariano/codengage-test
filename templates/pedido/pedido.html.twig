@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2 class="sub-header">Pedidos</h2>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            {% include 'pedido/form.html.twig' %}
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="well">
+                <h3>Registrar Pedido de Venda: </h3>
+                <p>permite incluir ou excluir um pedido de venda,
+                    sabendo que o Pedido (id: UUID, cliente: Pessoa, número:
+                    Integer/Autoincremento, emissão: Date, total: Double) contém um ou mais
+                    ItemPedido (id: UUID, produto: Produto, quantidade : Double, preçoUnitário :
+                    Double/recuperado do produto, percentualDesconto : Double, total : Double).</p>
+                <ol>
+                    <li>Todos os atributos são obrigatórios.</li>
+                    <li>IDs não podem se repetir.</li>
+                    <li>Todos os valores numéricos devem ser tratados com duas casas decimais e devem
+                        ser > 0 (exceto desconto, que pode ser >= 0).</li>
+                    <li>Preço e totais são monetários.</li>
+                    <li>Deve ser possível pesquisar os pedidos por qualquer atributo, exceto pelo id.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="clearfix">
+    {% include 'pedido/list.html.twig' %}
+    </div>
+{% endblock %}

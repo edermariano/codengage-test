@@ -1,0 +1,31 @@
+{% include 'pedido/search.html.twig' %}
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Número</th>
+            <th>Emissão</th>
+            <th>Produtos</th>
+            <th>Total</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for pedido in pedidos %}
+            <tr>
+                <td>{{ pedido.id }}</td>
+                <td>{{ pedido.cliente.nome }}</td>
+                <td>{{ pedido.numero }}</td>
+                <td>{{ pedido.emissao | date('d/m/Y') }}</td>
+                <td>{{ pedido.produtos }}</td>
+                <td>R$ {{ pedido.total|number_format(2, ',', '.') }}</td>
+                <td>
+                    <a href="{{ path('pedido_delete', {'id': pedido.id }) }}" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

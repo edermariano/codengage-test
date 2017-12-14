@@ -1,0 +1,14 @@
+{% set currentRoute = app.request.attributes.get('_route') %}
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+        <li {% if currentRoute[:4] == 'home' %}class="active"{% endif %}><a href="{{ path('home') }}">Overview <span class="sr-only">(current)</span></a></li>
+        <li {% if currentRoute[:4] == 'prod' %}class="active"{% endif %}><a href="{{ path('produtos') }}">{{ 'Produtos' | trans  }}</a></li>
+        <li {% if currentRoute[:4] == 'pess' %}class="active"{% endif %}><a href="{{ path('pessoas') }}">{{ 'Pessoas' | trans  }}</a></li>
+        <li {% if currentRoute[:4] == 'pedi' %}class="active"{% endif %}><a href="{{ path('pedidos') }}">{{ 'Pedido de Venda' | trans  }}</a></li>
+    </ul>
+    <ul class="nav nav-sidebar">
+        <li><a href="">LinkedIn</a></li>
+        <li><a href="">Github</a></li>
+        <li><a href="">Test Coverage</a></li>
+    </ul>
+</div>

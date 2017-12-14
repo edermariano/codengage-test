@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Codengage | Test{% endblock %}</title>
+        <meta about="Resolução de teste resolvido por Eder Lamar">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/estilo.css') }}">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {#<div class="container">#}
+
+            {#<head>#}
+            {#{% include 'nav.html.twig' %}#}
+            {#</head>#}
+
+            {#<div class="alert alert-success" role="alert">Testando o Alert</div>#}
+            {#<div class="alert alert-primary" role="alert">#}
+                {#This is a primary alert—check it out!#}
+            {#</div>#}
+            {##}
+        {#</div>#}
+        {% include 'nav.html.twig' %}
+
+
+        <div class="container-fluid">
+            <div class="row">
+                {% include 'sidebar.html.twig' %}
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+        </div>
+
+        </div> <!-- /container -->
+        <script src="{{ asset('build/js/app.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

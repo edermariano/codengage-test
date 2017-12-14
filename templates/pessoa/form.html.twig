@@ -1,0 +1,22 @@
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-info">
+                {% if acao == 'new' %}Cadastrar{% else %}Atualizar {% endif %} Usuário</button>
+        </div>
+    </div>
+{{ form_end(form) }}
+{% if sucesso %}
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Sucesso!</strong> {{ sucesso }}
+    </div>
+{% endif %}
+{% if app.request.query.get('erro') %}
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <button class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Atenção!</strong> {{ app.request.query.get('erro') }}
+    </div>
+{% endif %}
