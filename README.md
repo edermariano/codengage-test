@@ -23,17 +23,35 @@ Normalmente costumo separar backend de frontend em projetos separados. A arquite
 
 ### Instruções para rodar o projeto:
 
-*   Criar arquivo .env na raiz com dados para banco de dados.
+*   Rodar o Composer
+>`composer install`
+> - [x] Caso não tenha o composer instalado instale [aqui](https://getcomposer.org/download/).
+
+*   Após instalação do composer rode os testes: 
+>`php bin/phpunit`
+
+*   Crie o arquivo .env na raiz com dados para banco de dados.
 > Um arquivo `.env.dist` está disponível na raiz do projeto para auxiliar.
-*   Rodar o comando: 
+
+*   Execute o comando para criar a database: 
 >`php bin/console doctrine:database:create`
 > - [x] Verifique se o seu usurio de banco possui permissões de criação de database, caso não possuo, pule esta etapa e crie o banco com um usuário que possua permissão.
 
-*   Rodar o comando: 
+*   Execute o comando para rodar as migrações: 
 >`php bin/console doctrine:migrations:migrate`
 
-*   Rodar os testes: 
->`php bin/phpunit`
+*   Execute o comando para instalar as dependências do frontend: 
+>`yarn install`
+> - [x] Caso não tenha o yarn instalado instale [aqui](https://yarnpkg.com/en/docs/install).
+
+*   Execute o comando para compilar as dependências do frontend: 
+>`yarn run encore dev`
+
+*   Execute o servidor: 
+>`php bin/console server:run`
+
+Acesse o link exibido no comando.
+
 
 # Instruções do teste:
 [PDF com as instruções](https://github.com/edermariano/codengage-test/blob/master/public/pdf/teste.pdf)
